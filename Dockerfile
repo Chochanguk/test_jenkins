@@ -6,7 +6,7 @@ FROM gradle:7.6.1-jdk17-alpine AS build
 WORKDIR /app
 
 # 현재 디렉토리(첫번째 .) 내의 모든 파일과 폴더를 컨테이너의 /app 디렉토리(두번째 .)로 복사
-COPY src .
+COPY . .
 
 # gradle을 사용하여 프로젝트 빌드(daemon 프로세스 사용안함(필수 x))
 RUN gradle clean build --no-daemon
